@@ -1,21 +1,27 @@
 **Commands:**
+
 1. Runs the end-to-end tests with example env.
-`npm run test-run`
+   `npm run test-run`
 
 2. See the browser UI during test execution.
-`npm run test-head`
+   `npm run test-head`
 
-3. Open last HTML report
-`npm run report`
+3. View temp HTML report
+   `npm run report-view`
 
-4. Check eslint for .ts,.tsx files
-`npm run lint`
+4. Create HTML report folder
+   `npm run report-gen`
+   and open it
+   `allure open`
 
-5. Rewrite the format of files with prettier
-`npm run format`
+5. Check eslint for .ts,.tsx files
+   `npm run lint`
 
-6. Generate authentication states for user and admin roles
-`npm run generate-auth`
+6. Rewrite the format of files with prettier
+   `npm run format`
+
+7. Generate authentication states for user and admin roles
+   `npm run generate-auth`
 
 **Features:**
 
@@ -65,6 +71,7 @@ test('Admin can access admin panel', async ({ authenticatedPage }) => {
 **Environment Variables:**
 
 Make sure your `.env.{env}` file includes:
+
 - `BASE_URL`: Base URL of the application
 - `USER_EMAIL`: Email for user role
 - `USER_PASSWORD`: Password for user role
@@ -74,11 +81,11 @@ Make sure your `.env.{env}` file includes:
 **Allure report:**
 
 1. Install.
-`brew install allure`
+   `brew install allure`
 2. Setting up.
-`npm install --save-dev @playwright/test allure-playwright`
+   `npm install --save-dev @playwright/test allure-playwright`
 3. In the playwright.config.ts file, add Allure Playwright as a reporter.
-`reporter: [["line"], ["allure-playwright"]],`
+   `reporter: [["line"], ["allure-playwright"]],`
 4. Run tests
 5. Generate a report
-`allure serve allure-results`
+   `allure serve allure-results`
